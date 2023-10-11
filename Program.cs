@@ -2,6 +2,7 @@
 {
     static void Main()
     {
+        Console.WriteLine("Verificador de maiúsculas");
         string text = Console.ReadLine();
         int length = text.Length;
         string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -37,13 +38,17 @@
         Console.WriteLine(cont);
         Console.WriteLine(length);
 
+
+        bool resul = false;
         if (cont != text.Length)
         {
-            Console.WriteLine("false");
+            resul = resul;
         }
         else
         {
-            Console.WriteLine("true");
+            resul = true;
         }
+
+        Console.WriteLine($"O resultado é: {resul}")
     }
 }
