@@ -1,42 +1,26 @@
-﻿// https://leetcode.com/problems/palindrome-number/description/
-public class Solution 
+﻿public class Kata
 {
-    public static bool IsPalindrome(int x) 
+    public static string Shortcut(string input)
     {
-        string x_str = x.ToString();
-        int[] digs = new int [x_str.Length];
-        bool palindrome = false;
-
-        for (int i = 0; i < x_str.Length; i++)
+    string vogais = "aeiou";
+    string inp = "";
+    
+    for (int i = 0; i < input.Length; i++)
+    {
+        for (int j = 0; j < vogais.Length; j++)
         {
-            digs[i] = int.Parse(digs[i].ToString());
-        }
-
-        int[] reversedDigs = new int[digs.Length];
-        Array.Copy(digs, reversedDigs, digs.Length);
-        Array.Reverse(reversedDigs);
-
-        for (int i = 0; i < digs.Length; i++)
-        {
-            if (digs[i] != reversedDigs[i])
+            if (input[i] != vogais[j])
             {
-                palindrome = false;
-            }
-            else
-            {
-                palindrome = true;
+                inp += input[i];
             }
         }
-
-        return palindrome;
-
     }
-}
+    
+    return inp;
+    }
 
-class Program
-{
     static void Main()
     {
-        Console.WriteLine(Solution.IsPalindrome(2021));
+        Console.WriteLine(Shortcut("codewars"));    
     }
 }
